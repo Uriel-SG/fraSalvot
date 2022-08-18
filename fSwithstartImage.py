@@ -1,0 +1,162 @@
+import json
+import time
+import subprocess
+
+with open('freiSalvot.json', 'r') as openfile:
+	vocabulary = json.load(openfile)
+
+class color:
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   END = '\033[0m'
+   
+time.sleep(0.5)
+
+print(color.BLUE + color.BOLD + "\n########## BENVENUTO/A nella chat di FRA SALVOT! ##########\n")
+time.sleep(1.5)
+print("@&##BB##BBBBBBBBGGGBPPPGGPPPGGGGBGBGGGGGGBGGGGGGGGGGGGBBBB#&")
+time.sleep(0.07)
+print("@5????????????????YP???????????????????7?YY???????????????J#")
+time.sleep(0.07)
+print("@Y7????????????????5PJ????????J????????7JGJ????????????????B")
+time.sleep(0.07)
+print("@Y7???????????????J?5GY??JY555555YYJ???YPY?????????????????B")
+time.sleep(0.07)
+print("@J7???5YJ??????JPPP??JJ?YGP5YYY555PP5??Y???????????????????#")
+time.sleep(0.07)
+print("@Y7?????J?????7?JYY?????JBB5GGGGG5G5GJ?7?PP???????????????J#")
+time.sleep(0.07)
+print("@J7777777777777?J?777????JPGGGBGBGBG5?7?55J???JY5?????????J#")
+time.sleep(0.07)
+print("@J77777777YP5?77Y55YJ????7??JYPBPGPY?777777?YY5P??????????J#")
+time.sleep(0.07)
+print("&?77777777JP577777?JYY7?77?777JB???7777777J5J?GB5??????????#")
+time.sleep(0.07)
+print("&?7777777777777777777777777777?G??77777777??7?JJJ?????????J#")
+time.sleep(0.07)
+print("&?7777777?JJJJJJ?J???J?????????BJ?77777777?????????J??????J#")
+time.sleep(0.07)
+print("&???77777PPY55555555Y5YYY5YYYYY5YYYYYYYYYY555555PPPGGJ????J#")
+time.sleep(0.07)
+print("#YBP77777GGGGP555555555PP5P5P5555555555555555555PP5GG??????#")
+time.sleep(0.07)
+print("BPBY7777JBGGB5JJJJYYYYYJJJJJJJJJJJJJJJJ??????J??J?JPG????JP&")
+time.sleep(0.07)
+print("BGP?7777PG555JJJ??YY555JJJJJJJJJJJJJJJ?J5YY5J?????YGP????JB&")
+time.sleep(0.07)
+print("&G?7?YYPBGY55JYJ5GBGBBBGPYJJJJJJJJJJJ?JYY55555Y??JYGBPPY??5&")
+time.sleep(0.07)
+print("&P7!YBPGBGYJYYGBBPPBBBBBBBGPJJJJJJJJJ5GGGGBBBBBBPJ5GBPGB?7Y&")
+time.sleep(0.07)
+print("&PJJPBPGBGYJYBBBBPG##BBBGBGB5JJJJJJJPBBG5BBBBBBB#PYGBGGB5Y5&")
+time.sleep(0.07)
+print("B???GBGGBPYJ5BBBB#BBBBBB#BBBYJJJJJJ5BGGGGBGGBBBB#5YGBGGB5JY#")
+time.sleep(0.07)
+print("B777GBGGBPJJYBBBBB#BBBBBBBB5JJJJJJJ5BGGBGGGGBBBBBYYGBGG#Y7?#")
+time.sleep(0.07)
+print("B777J5YYBPYJJPGBPJBYYPBYPGYJJPYJY5JYPP5BYGPYB5PG5JYGB555J??B")
+time.sleep(0.07)
+print("#7777!77GGYJJJY5PPGP5PGP5JJJYPP5PYJJ?Y5P5GP5GP5YJJYGG?77???B")
+time.sleep(0.07)
+print("&?777777PGYJ?JJ?JJJYYYJ??JJJJJJJJ?JJ?JJJYYYYJJJJJJYGG??????G")
+time.sleep(0.07)
+print("&?777777PGJ????JJJJJJ??JJJJJJJ????????????JJJJJJJJYGB??????G")
+time.sleep(0.07)
+print("#?777777PGYYYYYYYYYYYYYYYYYYYYJJJJJJJJJYYY55Y5555Y5BB??????G")
+print("#?777777JY5YYY5BBGPPBGPPPPPPPP5555PPPPPPPPPPBGBGGB#PJ??????G")
+print("#?7777777777775BGBGB#PYY5P55555YYYP555PPPPYYGYJBGGBP???????G")
+print("#?777777777777B5YYYBPBYY5B55555YYY555555PB55BY7GGYGG???????G")
+time.sleep(0.07)
+print("&J777777777777GGY55#PB5YPB5555YYYY5YY555P#55BY5#PPBP???????B")
+time.sleep(0.07)
+print("#?777777777777YBP5PG#B5YPG55PPP55PGGPPPPP#55BGBPPBGJ???????B")
+time.sleep(0.07)
+print("#?7777777777777JGPJYBBPPPBBB#BGBBGGGBBBBB#GG#BGPGP?????????G")
+time.sleep(0.07)
+print("#777777777777777?YPBG#PYY#B#BBBGGGGGG#PGB#GB#BBGJ??????????G")
+time.sleep(0.07)
+print("#777777777777777777JP#PPP#BBBGGBBGBGG55PGBGBBGJ????????????B")
+time.sleep(0.07)
+print("#7777777777777777777J#5YY#P55555BBG555YYYGGYG57????????????G")
+time.sleep(0.07)
+print("#?777777777777777777J#Y55PP5PPPPPPP555555P5YB5????????????JG")
+time.sleep(0.07)
+print("#?777777??7777?77777J#5PG5555555555555YYY55YPG???????????JYB")
+time.sleep(0.07)
+print("&?777?7???????????77?YYYYGBPPPPP#J?JBYYY5BJ?????????????JJYB")
+time.sleep(0.07)
+print("@J7??????????????????77775#55555#?7?BP555BY????????????JJJJ#")
+time.sleep(0.07)
+print("@J7??7??????????????????7G&#####G?77GBBGGGJ????????????JY5G&")
+time.sleep(0.07)
+print("&P555P55PP5PP55P55PP5YY55###&&##G5PP#BGGGGGBPGGGGGGPPPPG#@@&")
+time.sleep(1)
+print(color.END)
+
+while True:
+	print(color.GREEN + '''
+	Scegli una opzione:
+		
+		1- Parlami e insegnami ciò che ancora non so
+		
+		2- Esci
+		
+		''' + color.BLUE)
+	
+	scelta = input("--> " + color.GREEN)			
+	if scelta == "1":	
+		print(color.BLUE + "\n############################################################")
+		time.sleep(1)
+		print(color.RED + "Inizio chat")
+		time.sleep(0.8)
+		print("digita 'exit' per uscire dalla chat in qualsiasi momento\n")
+		time.sleep(1.5)
+		while True:
+			io = input(color.END + color.BOLD + "\nTu: " + color.END)
+			io = io.lower()
+			if io == "exit":
+				time.sleep(0.5)
+				print(color.BLUE + color.BOLD + "\nfra Salvot:" + color.END + "Ciao! È stato un piacere, torna in qualsiasi momento...\n")
+				time.sleep(2)
+				print(color.BLUE + "\n############################################################" + color.END)
+				break
+				
+			if io == "myip":
+				time.sleep(0.5)
+				subprocess.run(["curl", "ipinfo.io/ip"])
+			if io == "uriel":
+				subprocess.run(["termux-open", "https://uriel-code.web.app"])
+			
+			if io == "puoi fare una ricerca per me?" or io == "google":
+				time.sleep(0.5)
+				testo = "spero la ricerca sia stata fruttuosa! :-)"
+				input(color.BLUE + "\nFra Salvot: " + color.END + "ti dò la possibilità di fare qualsiasi ricerca da qui... per uscire poi, basterà digitare 'q' e poi 'y' ok? andiamo!")
+				vocabulary[io] = testo
+				subprocess.run(["w3m", "www.google.com"])
+			
+			if io == "che ora è?" or io == "che ore sono?" or io == "mi dici l'ora?" or io == "dimmi l'ora" or io == "che ora è" or io == "che ore sono":
+				ora = time.strftime('%d-%m-%Y %H:%M:%S', time.localtime())
+				vocabulary[io] = str(ora)
+
+			if io in vocabulary:
+				time.sleep(1)
+				print(color.BLUE + color.BOLD + "\nFra Salvot: " + color.END + vocabulary[io])
+			else:
+				time.sleep(0.5)
+				learn = input(color.BLUE + "\nFra Salvot: " + color.END + "è la prima volta che sento questo, tu come risponderesti? Insegnami!\n Risposta: ")
+				vocabulary[io] = learn
+				continue
+				
+	elif scelta == "2":
+				break
+				
+json_object = json.dumps(vocabulary, indent=4)
+
+with open("freiSalvot.json", "w") as outfile:
+	outfile.write(json_object)
+	
+print(color.BLUE + "\nfra Salvot: " + color.END + "Alla prossima!\n")
