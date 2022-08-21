@@ -42,6 +42,7 @@ def teach():
 	chattext.tag_configure('thanks', foreground='blue')
 	sendbutt["state"] = "normal"
 	teachbutt["state"] = "disabled"
+        window.bind('<Return>', lambda event: sendtext())
 
 def in_vocabulary():
 	global texttosend
@@ -62,6 +63,7 @@ def not_in_vocabulary():
 	chattext["state"] = "disabled"
 	sendbutt["state"] = "disabled"
 	teachbutt["state"] = "normal"
+        window.bind('<Return>', lambda event: teach())
 
 def sendtext():
 	global texttosend
