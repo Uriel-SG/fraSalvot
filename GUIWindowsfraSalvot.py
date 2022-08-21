@@ -103,6 +103,7 @@ chattext.image_create(tk.END, image= fraSalvot)
 chattext["state"] = "normal"
 chattext.insert(tk.END, "\n                           Benvenuto!\n")
 
+#Send text with Enter button
 window.bind('<Return>', lambda event: sendtext())
 
 #Database update
