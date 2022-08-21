@@ -63,7 +63,7 @@ def not_in_vocabulary():
 	sendbutt["state"] = "disabled"
 	teachbutt["state"] = "normal"
 
-def sendtext(event):
+def sendtext():
 	global texttosend
 	global vocabulary
 	texttosend = entrytext.get()
@@ -103,7 +103,7 @@ chattext.image_create(tk.END, image= fraSalvot)
 chattext["state"] = "normal"
 chattext.insert(tk.END, "\n                           Benvenuto!\n")
 
-window.bind('<Return>', sendtext)
+window.bind('<Return>', lambda event: sendtext())
 
 #Database update
 json_object = json.dumps(vocabulary, indent=4)
