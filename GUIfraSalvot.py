@@ -6,43 +6,26 @@ import json
 with open('freiSalvot.json', 'r') as openfile:
 	vocabulary = json.load(openfile)
 
-#Window construction
-window = tk.Tk()
-window.configure(bg="black")
-#window.attributes("-fullscreen", True)
-
-#Exit function
-def exit_chat():
-	global vocabulary
-	json_object = json.dumps(vocabulary, indent=4)
-	with open("freiSalvot.json", "w") as outfile:
-		outfile.write(json_object)
-	window.destroy()
-
-#Menubar
-menubar = tk.Menu(window)
-file_menu = tk.Menu(menubar)
-menubar.add_cascade(label="File", menu=file_menu)
-file_menu.add_command(label='Exit', command=exit_chat)
-window.config(menu=menubar)
-
 #Code
 texttosend = ""
-	
-def teach():
+
+def sendtext():
 	global texttosend
 	global vocabulary
-	string_to_teach = entrytext.get()
-	vocabulary[texttosend] = string_to_teach
-	entrytext.delete("0", tk.END)
+	texttosend = entrytext.get()
 	chattext["state"] = "normal"
-	chattext.insert(tk.END, "fra Salvot: ", 'thanks')
-	chattext.insert(tk.END, "Grazie! Ora ho imparato... Possiamo continuare...\n\n")
+	chattext.insert(tk.END, "\nTu: ", 'tu')
+	chattext.insert(tk.END, texttosend + "\n\n")
+	entrytext.delete("0", tk.END)
 	chattext.yview(tk.END)
-	chattext.tag_configure('thanks', foreground='blue')
-	sendbutt["state"] = "normal"
-	teachbutt["state"] = "disabled"
-        window.bind('<Return>', lambda event: sendtext())
+	chattext.tag_config('tu', foreground='green')
+	if texttosend in vocabulary:
+		if texttosend.lower() == "exit":
+			exit_chat()
+		else:
+			window.after(1000, in_vocabulary)
+	else:
+		window.after(1000, not_in_vocabulary)	
 
 def in_vocabulary():
 	global texttosend
@@ -65,23 +48,39 @@ def not_in_vocabulary():
 	teachbutt["state"] = "normal"
         window.bind('<Return>', lambda event: teach())
 
-def sendtext():
+def teach():
 	global texttosend
 	global vocabulary
-	texttosend = entrytext.get()
-	chattext["state"] = "normal"
-	chattext.insert(tk.END, "\nTu: ", 'tu')
-	chattext.insert(tk.END, texttosend + "\n\n")
+	string_to_teach = entrytext.get()
+	vocabulary[texttosend] = string_to_teach
 	entrytext.delete("0", tk.END)
+	chattext["state"] = "normal"
+	chattext.insert(tk.END, "fra Salvot: ", 'thanks')
+	chattext.insert(tk.END, "Grazie! Ora ho imparato... Possiamo continuare...\n\n")
 	chattext.yview(tk.END)
-	chattext.tag_config('tu', foreground='green')
-	if texttosend in vocabulary:
-		if texttosend.lower() == "exit":
-			exit_chat()
-		else:
-			window.after(1000, in_vocabulary)
-	else:
-		window.after(1000, not_in_vocabulary)
+	chattext.tag_configure('thanks', foreground='blue')
+	sendbutt["state"] = "normal"
+	teachbutt["state"] = "disabled"
+        window.bind('<Return>', lambda event: sendtext())
+
+def exit_chat():
+	global vocabulary
+	json_object = json.dumps(vocabulary, indent=4)
+	with open("freiSalvot.json", "w") as outfile:
+		outfile.write(json_object)
+	window.destroy()
+
+#Window construction
+window = tk.Tk()
+window.configure(bg="black")
+#window.attributes("-fullscreen", True)
+
+#Menubar
+menubar = tk.Menu(window)
+file_menu = tk.Menu(menubar)
+menubar.add_cascade(label="File", menu=file_menu)
+file_menu.add_command(label='Exit', command=exit_chat)
+window.config(menu=menubar)
 
 #Widgets
 title = tk.Label(text="fra Salvot's Chat\n", font=("Times", 16, "bold"), bg="black", fg="green").pack()
